@@ -1,2 +1,2 @@
-# shreyasvai.github.io
+# Shreyas Vaidya
 Personal Website
