@@ -1,2 +1,2 @@
 # Shreyas Vaidya
-This is my personal website that I created to showcase my work and a little bit more about myself. It uses HTML and CSS (Bootstrap) with more features to be added soon.
+This is a personal website that I created to showcase my work and talk little bit more about myself.
