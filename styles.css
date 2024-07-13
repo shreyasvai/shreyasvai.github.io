@@ -1,11 +1,11 @@
 /* Noto Sans */
 .noto-sans-light {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
 }
 
 .noto-sans-medium {
@@ -14,20 +14,11 @@
     font-weight: 500;
     font-style: normal;
     font-variation-settings:
-      "wdth" 100;
+        "wdth" 100;
 }
 
 /* Other styling */
 .profile {
-    max-width: 20%;
-    height: 20%;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a {
-    text-decoration: none;
-    color: black;
+    max-width: 25%;
+    height: 25%;
 }
