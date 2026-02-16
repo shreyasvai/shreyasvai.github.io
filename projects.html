@@ -1,84 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Noto Sans Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-
-    <title>Projects</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Shreyas Vaidya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; }
+    </style>
 </head>
+<body class="selection:bg-gray-100">
 
-<body class="mx-auto p-3">
+    <!-- Navigation (Same as index) -->
+    <nav class="max-w-4xl mx-auto px-6 py-12 flex justify-between items-center">
+        <a href="index.html" class="text-lg font-semibold tracking-tighter uppercase">Shreyas Vaidya</a>
+        <div class="flex space-x-6 md:space-x-10 text-[10px] md:text-xs font-medium uppercase tracking-widest text-gray-500">
+            <a href="projects.html" class="text-black">Projects</a>
+            <a href="files/Resume.pdf" target="_blank" class="hover:text-black transition duration-300">Resume</a>
+            <a href="https://bento.me/shreyasvai" target="_blank" class="hover:text-black transition duration-300">Contact</a>
+        </div>
+    </nav>
 
-    <!-- Name -->
-    <h2 class="noto-sans-medium"><a
-            class="link-body-emphasis link-offset-2 link-offset-0-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-            href="index.html">Shreyas Vaidya</a></h2>
+    <!-- Project List Header -->
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <header class="mb-20">
+            <h1 class="text-xs uppercase tracking-[0.4em] text-gray-400 mb-4">Selected Work</h1>
+            <p class="text-2xl font-light text-gray-500">A collection of systems and experiments.</p>
+        </header>
 
-    <br>
+        <!-- Project Items -->
+        <div class="space-y-24">
+            
+            <!-- Project 1 -->
+            <div class="group border-t border-gray-100 pt-10">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                    <div>
+                        <h2 class="text-2xl font-normal mb-2">
+                            <a href="https://devpost.com/software/canny-edge-detection" target="_blank" class="hover:underline underline-offset-4">Canny Edge Detection</a>
+                        </h2>
+                        <p class="text-sm text-gray-400 mb-6 italic">HSHacks 2 (San Jose, CA) — Won Wolfram Alpha Award</p>
+                    </div>
+                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-widest py-1 px-3 bg-gray-50 rounded-full">OpenCV / Java</span>
+                </div>
+                <p class="text-gray-500 font-light max-w-2xl leading-relaxed">
+                    Developed a high-performance system to identify edges within digital images, collaborating in a team of three. Focused on noise reduction and edge localization using Java-based image processing.
+                </p>
+            </div>
 
-    <!-- Projects -->
-    <div class="noto-sans-light">
-        <p><a href="https://devpost.com/software/canny-edge-detection"
-                class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                target="_blank" rel="noopener noreferrer">Canny Edge Detection</a></p>
-        <font size="-1">
-            <p><i>Program: HSHacks 2 (San Jose, CA) - Won Wolfram Alpha Award</i></p>
-            <ul>
-                <li>Used <b>OpenCV</b> and <b>Java</b> to create a system that identified the edges of an image with
-                    group of three students</li>
-            </ul>
-        </font>
-    </div>
+            <!-- Project 2 -->
+            <div class="group border-t border-gray-100 pt-10">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                    <div>
+                        <h2 class="text-2xl font-normal mb-2">
+                            <a href="https://devpost.com/software/threat-detector" target="_blank" class="hover:underline underline-offset-4">Threat Detector</a>
+                        </h2>
+                        <p class="text-sm text-gray-400 mb-6 italic">MenloHacks (Menlo Park, CA)</p>
+                    </div>
+                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-widest py-1 px-3 bg-gray-50 rounded-full">IoT / JavaScript</span>
+                </div>
+                <p class="text-gray-500 font-light max-w-2xl leading-relaxed">
+                    An IoT proximity alert system using range sensors to detect threats. Built using an Afero board connected to an Arduino with code written in JavaScript.
+                </p>
+                <a href="https://gist.github.com/kaushalpartani/529986b40858b6d5cb79a912acd46402" target="_blank" class="inline-block mt-6 text-sm font-semibold border-b border-black">Source Code</a>
+            </div>
 
-    <div class="noto-sans-light">
-        <p><a href="https://devpost.com/software/threat-detector"
-                class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                target="_blank" rel="noopener noreferrer">Threat Detector</a></p>
-        <font size="-1">
-            <p><i>Program: MenloHacks (Menlo Park, CA)</i></p>
-            <ul>
-                <li>Using a range sensor, people can detect proximity to certain objects and detect if there is a threat
-                    near them</li>
-                <li>Used <b>Afero board</b> connected to an <b>Arduino</b> to code threat detector in <b>JavaScript</b>
-                </li>
-                <li><a href="https://gist.github.com/kaushalpartani/529986b40858b6d5cb79a912acd46402"
-                        class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                        target="_blank" rel="noopener noreferrer"><b>Source Code</b></a></li>
-            </ul>
-        </font>
-    </div>
+            <!-- Project 3 -->
+            <div class="group border-t border-gray-100 pt-10 pb-20">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                    <div>
+                        <h2 class="text-2xl font-normal mb-2">
+                            <a href="https://devpost.com/software/donatewebsite" target="_blank" class="hover:underline underline-offset-4">Your Charity Choice</a>
+                        </h2>
+                        <p class="text-sm text-gray-400 mb-6 italic">HackUMBC (Baltimore, MD)</p>
+                    </div>
+                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-widest py-1 px-3 bg-gray-50 rounded-full">HTML / CSS / Bootstrap</span>
+                </div>
+                <p class="text-gray-500 font-light max-w-2xl leading-relaxed">
+                    A web application designed to streamline the donation process, connecting users with reputable charitable organizations through a clean, accessible interface.
+                </p>
+                <a href="https://github.com/BreckenK/donatewebsite" target="_blank" class="inline-block mt-6 text-sm font-semibold border-b border-black">Source Code</a>
+            </div>
 
-    <div class="noto-sans-light">
-        <p><a href="https://devpost.com/software/donatewebsite"
-                class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                target="_blank" rel="noopener noreferrer">Your Charity Choice</a></p>
-        <font size="-1">
-            <p><i>Program: HackUMBC (Baltimore, MD)</i></p>
-            <ul>
-                <li>Used <b>HTML</b> and <b>CSS (Bootstrap)</b> to create website application that streamline how people
-                    can donate to reputable charitable organizations</li>
-                <li><a href="https://github.com/BreckenK/donatewebsite"
-                        class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                        target="_blank" rel="noopener noreferrer"><b>Source Code</b></a></li>
-            </ul>
-        </font>
-    </div>
+        </div>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <footer class="max-w-4xl mx-auto px-6 py-24 border-t border-gray-50 flex justify-between items-center">
+        <p class="text-xs text-gray-400 uppercase tracking-widest">© 2024 Shreyas Vaidya</p>
+        <a href="index.html" class="text-xs text-gray-400 hover:text-black uppercase tracking-widest transition">Back to Home</a>
+    </footer>
+
 </body>
-
 </html>
