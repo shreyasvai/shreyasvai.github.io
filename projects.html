@@ -5,90 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Shreyas Vaidya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; }
-    </style>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Roboto', sans-serif; background-color: #ffffff; color: #1C1B1F; }</style>
 </head>
-<body class="selection:bg-gray-100">
+<body class="p-4 md:p-8">
 
-    <!-- Navigation (Same as index) -->
-    <nav class="max-w-4xl mx-auto px-6 py-12 flex justify-between items-center">
-        <a href="index.html" class="text-lg font-semibold tracking-tighter uppercase">Shreyas Vaidya</a>
-        <div class="flex space-x-6 md:space-x-10 text-[10px] md:text-xs font-medium uppercase tracking-widest text-gray-500">
-            <a href="projects.html" class="text-black">Projects</a>
-            <a href="files/Resume.pdf" target="_blank" class="hover:text-black transition duration-300">Resume</a>
-            <a href="https://bento.me/shreyasvai" target="_blank" class="hover:text-black transition duration-300">Contact</a>
+     <nav class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
+        <h1 class="text-2xl font-medium tracking-tight">Shreyas Vaidya</h1>
+        <div class="flex flex-wrap gap-2 text-sm">
+            <a href="index.html" class="px-4 py-2 bg-[#D1E4FF] text-[#001D36] rounded-full font-medium">Home</a>
+            <a href="projects.html" class="px-4 py-2 hover:bg-gray-100 rounded-full transition">Projects</a>
+            <a href="blog.html" class="px-4 py-2 hover:bg-gray-100 rounded-full transition">Blog</a>
+            <a href="files/Resume.pdf" target="_blank" class="px-4 py-2 hover:bg-gray-100 rounded-full transition">Resume</a>
+            <a href="https://linktr.ee/shreyasvai" target="_blank" class="px-4 py-2 hover:bg-gray-100 rounded-full transition text-[#0061A4] font-medium">Contact</a>
         </div>
     </nav>
 
-    <!-- Project List Header -->
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        <header class="mb-20">
-            <h1 class="text-xs uppercase tracking-[0.4em] text-gray-400 mb-4">Selected Work</h1>
-            <p class="text-2xl font-light text-gray-500">A collection of systems and experiments.</p>
-        </header>
+    <main class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-medium mb-8">Selected Projects</h2>
 
-        <!-- Project Items -->
-        <div class="space-y-24">
-            
+        <div class="grid gap-6">
             <!-- Project 1 -->
-            <div class="group border-t border-gray-100 pt-10">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                    <div>
-                        <h2 class="text-2xl font-normal mb-2">
-                            <a href="https://devpost.com/software/canny-edge-detection" target="_blank" class="hover:underline underline-offset-4">Canny Edge Detection</a>
-                        </h2>
-                        <p class="text-sm text-gray-400 mb-6 italic">HSHacks 2 (San Jose, CA) — Won Wolfram Alpha Award</p>
-                    </div>
-                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-widest py-1 px-3 bg-gray-50 rounded-full">OpenCV / Java</span>
+            <div class="bg-[#F7F9FF] p-6 rounded-[28px] border border-transparent hover:border-[#0061A4] transition-all">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-lg font-medium">Canny Edge Detection</h3>
+                    <span class="text-xs bg-white px-3 py-1 rounded-full border border-gray-200">OpenCV / Java</span>
                 </div>
-                <p class="text-gray-500 font-light max-w-2xl leading-relaxed">
-                    Developed a high-performance system to identify edges within digital images, collaborating in a team of three. Focused on noise reduction and edge localization using Java-based image processing.
-                </p>
+                <p class="text-sm text-gray-500 mb-4 italic">HSHacks 2 — Won Wolfram Alpha Award</p>
+                <p class="text-gray-700 mb-4">Developed a high-performance system to identify edges within digital images, collaborating in a team of three. Focused on noise reduction and edge localization using Java-based image processing.</p>
+                <a href="https://devpost.com/software/canny-edge-detection" target="_blank" class="text-[#0061A4] font-medium text-sm">View Devpost →</a>
             </div>
 
             <!-- Project 2 -->
-            <div class="group border-t border-gray-100 pt-10">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                    <div>
-                        <h2 class="text-2xl font-normal mb-2">
-                            <a href="https://devpost.com/software/threat-detector" target="_blank" class="hover:underline underline-offset-4">Threat Detector</a>
-                        </h2>
-                        <p class="text-sm text-gray-400 mb-6 italic">MenloHacks (Menlo Park, CA)</p>
-                    </div>
-                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-widest py-1 px-3 bg-gray-50 rounded-full">IoT / JavaScript</span>
+            <div class="bg-[#F7F9FF] p-6 rounded-[28px] border border-transparent hover:border-[#0061A4] transition-all">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-lg font-medium">Threat Detector</h3>
+                    <span class="text-xs bg-white px-3 py-1 rounded-full border border-gray-200">IoT / JS</span>
                 </div>
-                <p class="text-gray-500 font-light max-w-2xl leading-relaxed">
-                    An IoT proximity alert system using range sensors to detect threats. Built using an Afero board connected to an Arduino with code written in JavaScript.
-                </p>
-                <a href="https://gist.github.com/kaushalpartani/529986b40858b6d5cb79a912acd46402" target="_blank" class="inline-block mt-6 text-sm font-semibold border-b border-black">Source Code</a>
+                <p class="text-sm text-gray-500 mb-4 italic">MenloHacks (Menlo Park, CA)</p>
+                <p class="text-gray-700 mb-4">An IoT proximity alert system using range sensors to detect threats. Built using an Afero board connected to an Arduino with code written in JavaScript.</p>
+                <div class="flex gap-4">
+                    <a href="https://devpost.com/software/threat-detector" target="_blank" class="text-[#0061A4] font-medium text-sm">Devpost</a>
+                    <a href="https://gist.github.com/kaushalpartani/529986b40858b6d5cb79a912acd46402" target="_blank" class="text-[#0061A4] font-medium text-sm">Source Code</a>
+                </div>
             </div>
 
             <!-- Project 3 -->
-            <div class="group border-t border-gray-100 pt-10 pb-20">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                    <div>
-                        <h2 class="text-2xl font-normal mb-2">
-                            <a href="https://devpost.com/software/donatewebsite" target="_blank" class="hover:underline underline-offset-4">Your Charity Choice</a>
-                        </h2>
-                        <p class="text-sm text-gray-400 mb-6 italic">HackUMBC (Baltimore, MD)</p>
-                    </div>
-                    <span class="text-[10px] font-medium text-gray-400 uppercase tracking-widest py-1 px-3 bg-gray-50 rounded-full">HTML / CSS / Bootstrap</span>
+            <div class="bg-[#F7F9FF] p-6 rounded-[28px] border border-transparent hover:border-[#0061A4] transition-all">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-lg font-medium">Your Charity Choice</h3>
+                    <span class="text-xs bg-white px-3 py-1 rounded-full border border-gray-200">Bootstrap / HTML</span>
                 </div>
-                <p class="text-gray-500 font-light max-w-2xl leading-relaxed">
-                    A web application designed to streamline the donation process, connecting users with reputable charitable organizations through a clean, accessible interface.
-                </p>
-                <a href="https://github.com/BreckenK/donatewebsite" target="_blank" class="inline-block mt-6 text-sm font-semibold border-b border-black">Source Code</a>
+                <p class="text-sm text-gray-500 mb-4 italic">HackUMBC (Baltimore, MD)</p>
+                <p class="text-gray-700 mb-4">A web application designed to streamline the donation process, connecting users with reputable charitable organizations through a clean, accessible interface.</p>
+                <a href="https://github.com/BreckenK/donatewebsite" target="_blank" class="text-[#0061A4] font-medium text-sm">Source Code</a>
             </div>
-
         </div>
     </main>
-
-    <footer class="max-w-4xl mx-auto px-6 py-24 border-t border-gray-50 flex justify-between items-center">
-        <p class="text-xs text-gray-400 uppercase tracking-widest">© 2024 Shreyas Vaidya</p>
-        <a href="index.html" class="text-xs text-gray-400 hover:text-black uppercase tracking-widest transition">Back to Home</a>
-    </footer>
 
 </body>
 </html>
