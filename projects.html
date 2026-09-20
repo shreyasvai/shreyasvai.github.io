@@ -5,63 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects | Shreyas Vaidya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #fafafa;
-            color: #171717; 
+            color: #171717;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        html.dark body {
+            background-color: #121212;
+            color: #a3a3a3;
         }
         .nav-link-active {
             background-color: #171717;
             color: #ffffff;
         }
+        html.dark .nav-link-active {
+            background-color: #e5e5e5;
+            color: #121212;
+        }
+        html #theme-toggle-sun {
+            display: none;
+        }
+        html #theme-toggle-moon {
+            display: block;
+        }
+        html.dark #theme-toggle-sun {
+            display: block;
+        }
+        html.dark #theme-toggle-moon {
+            display: none;
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-neutral-200 selection:text-neutral-900">
+<body class="min-h-screen flex flex-col selection:bg-neutral-200 selection:text-neutral-900 dark:selection:bg-neutral-800 dark:selection:text-neutral-100">
 
     <!-- Navigation Header -->
-    <header class="w-full border-b border-neutral-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+    <header class="w-full border-b border-neutral-100 dark:border-neutral-800 bg-white/80 dark:bg-[#121212]/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="group flex items-center gap-2">
-                <span class="font-semibold tracking-tight text-neutral-900 group-hover:text-neutral-600 transition">Shreyas Vaidya</span>
+                <span class="font-semibold tracking-tight text-neutral-900 dark:text-[#e5e5e5] group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition">Shreyas Vaidya</span>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
-                <a href="index.html" class="px-3 py-1.5 rounded-full text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all">Home</a>
-                <a href="projects.html" class="px-3 py-1.5 rounded-full nav-link-active transition-all">Projects</a>
-                <a href="blog.html" class="px-3 py-1.5 rounded-full text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all">Blog</a>
-                <a href="files/Resume.pdf" target="_blank" class="px-3 py-1.5 rounded-full text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-all flex items-center gap-1">
-                    Resume
-                    <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-                <a href="contact.html" class="px-3.5 py-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-850 rounded-full transition-all text-xs font-semibold flex items-center gap-1 ml-2">
-                    Contact
-                </a>
-            </nav>
+            <div class="flex items-center gap-2">
+                <!-- Desktop Nav -->
+                <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
+                    <a href="index.html" class="px-3 py-1.5 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#e5e5e5] hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all">Home</a>
+                    <a href="projects.html" class="px-3 py-1.5 rounded-full nav-link-active transition-all">Projects</a>
+                    <a href="blog.html" class="px-3 py-1.5 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#e5e5e5] hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all">Blog</a>
+                    <a href="files/Resume.pdf" target="_blank" class="px-3 py-1.5 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#e5e5e5] hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all flex items-center gap-1">
+                        Resume
+                        <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="contact.html" class="px-3.5 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-850 dark:text-[#e5e5e5] rounded-full transition-all text-xs font-semibold flex items-center gap-1 ml-2">
+                        Contact
+                    </a>
+                </nav>
 
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="sm:hidden p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 transition-all focus:outline-none">
-                <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-[#e5e5e5] transition-all focus:outline-none" aria-label="Toggle Dark Mode">
+                    <svg id="theme-toggle-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="theme-toggle-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="sm:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-[#e5e5e5] transition-all focus:outline-none">
+                    <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-neutral-100 py-3 px-6 animate-fadeIn">
+        <div id="mobile-menu" class="hidden sm:hidden bg-white dark:bg-[#121212] border-b border-neutral-100 dark:border-neutral-800 py-3 px-6 animate-fadeIn">
             <div class="flex flex-col gap-1.5 text-sm font-medium">
-                <a href="index.html" class="px-4 py-2 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-all">Home</a>
+                <a href="index.html" class="px-4 py-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all">Home</a>
                 <a href="projects.html" class="px-4 py-2 rounded-lg nav-link-active">Projects</a>
-                <a href="blog.html" class="px-4 py-2 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-all">Blog</a>
-                <a href="files/Resume.pdf" target="_blank" class="px-4 py-2 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-all flex items-center justify-between">
+                <a href="blog.html" class="px-4 py-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all">Blog</a>
+                <a href="files/Resume.pdf" target="_blank" class="px-4 py-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all flex items-center justify-between">
                     <span>Resume</span>
                     <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
-                <a href="contact.html" class="px-4 py-2 rounded-lg text-neutral-800 hover:bg-neutral-50 font-semibold text-neutral-900 border border-neutral-100 text-center mt-2">
+                <a href="contact.html" class="px-4 py-2 rounded-lg text-neutral-800 dark:text-[#e5e5e5] hover:bg-neutral-50 dark:hover:bg-neutral-800 font-semibold border border-neutral-100 dark:border-neutral-800 text-center mt-2">
                     Contact Info
                 </a>
             </div>
@@ -72,79 +111,76 @@
     <main class="flex-grow max-w-3xl w-full mx-auto px-6 py-12 md:py-16 space-y-12">
         
         <div>
-            <h2 class="text-3xl font-bold tracking-tight text-neutral-900">Selected Projects</h2>
-            <p class="text-neutral-500 mt-2">A compilation of things I've built, hacked, and awards won.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-neutral-900 dark:text-[#e5e5e5]">Selected Projects</h2>
+            <p class="text-neutral-500 dark:text-neutral-400 mt-2">A compilation of things I've built, hacked, and awards won.</p>
         </div>
 
         <div class="grid gap-6">
-            <!-- Project 1 -->
-            <div class="bg-white p-6 rounded-2xl border border-neutral-200/60 hover:border-neutral-400 transition-all duration-300 shadow-sm flex flex-col justify-between h-full">
+            <div class="bg-white dark:bg-[#1a1a1a] p-6 rounded-2xl border border-neutral-200/60 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm flex flex-col justify-between h-full">
                 <div>
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
-                        <h3 class="text-lg font-bold text-neutral-900">Canny Edge Detection</h3>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-[#e5e5e5]">Canny Edge Detection</h3>
                         <div class="flex gap-1.5">
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">OpenCV</span>
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">Java</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">Java</span>
                         </div>
                     </div>
-                    <p class="text-xs font-bold text-[#0061A4] bg-blue-50/50 border border-blue-100 px-2.5 py-1 rounded-full w-max mb-4">🏆 Won Wolfram Alpha Award &bull; HSHacks 2</p>
-                    <p class="text-sm text-neutral-600 leading-relaxed mb-6">
+                    <p class="text-xs font-bold text-[#0061A4] bg-blue-50/50 dark:bg-blue-900/20 dark:text-blue-200 border border-blue-100 dark:border-blue-900 px-2.5 py-1 rounded-full w-max mb-4">🏆 Won Wolfram Alpha Award &bull; HSHacks 2</p>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                         Collaborated in a team of three to develop a high-performance system aimed at identifying edges within digital images. Implemented customized noise reduction algorithms and robust localization techniques using pure Java-based image processing APIs.
                     </p>
                 </div>
                 <div>
-                    <a href="https://devpost.com/software/canny-edge-detection" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 hover:text-neutral-600 group transition">
+                    <a href="https://devpost.com/software/canny-edge-detection" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 dark:text-[#e5e5e5] hover:text-neutral-600 dark:hover:text-neutral-300 group transition">
                         View Devpost 
                         <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="bg-white p-6 rounded-2xl border border-neutral-200/60 hover:border-neutral-400 transition-all duration-300 shadow-sm flex flex-col justify-between h-full">
+            <div class="bg-white dark:bg-[#1a1a1a] p-6 rounded-2xl border border-neutral-200/60 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm flex flex-col justify-between h-full">
                 <div>
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
-                        <h3 class="text-lg font-bold text-neutral-900">Threat Detector</h3>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-[#e5e5e5]">Threat Detector</h3>
                         <div class="flex gap-1.5">
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">IoT</span>
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">JavaScript</span>
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">Arduino</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">IoT</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">JavaScript</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">Arduino</span>
                         </div>
                     </div>
-                    <p class="text-xs text-neutral-500 font-medium mb-4">Built at MenloHacks (Menlo Park, CA)</p>
-                    <p class="text-sm text-neutral-600 leading-relaxed mb-6">
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 font-medium mb-4">Built at MenloHacks (Menlo Park, CA)</p>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                         An innovative IoT proximity alert system leveraging modern range sensors to instantly detect architectural and safety threats. Constructed a high-speed communication pipeline between an Afero board and Arduino microcontroller with custom JS firmware.
                     </p>
                 </div>
                 <div class="flex gap-4">
-                    <a href="https://devpost.com/software/threat-detector" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 hover:text-neutral-600 group transition">
+                    <a href="https://devpost.com/software/threat-detector" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 dark:text-[#e5e5e5] hover:text-neutral-600 dark:hover:text-neutral-300 group transition">
                         Devpost
                         <svg class="w-3 h-3 transform group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
-                    <span class="text-neutral-300 text-xs font-light">|</span>
-                    <a href="https://gist.github.com/kaushalpartani/529986b40858b6d5cb79a912acd46402" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-600 hover:text-neutral-900 transition">
+                    <span class="text-neutral-300 dark:text-neutral-600 text-xs font-light">|</span>
+                    <a href="https://gist.github.com/kaushalpartani/529986b40858b6d5cb79a912acd46402" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 transition">
                         Source Code
                     </a>
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="bg-white p-6 rounded-2xl border border-neutral-200/60 hover:border-neutral-400 transition-all duration-300 shadow-sm flex flex-col justify-between h-full">
+            <div class="bg-white dark:bg-[#1a1a1a] p-6 rounded-2xl border border-neutral-200/60 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm flex flex-col justify-between h-full">
                 <div>
                     <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
-                        <h3 class="text-lg font-bold text-neutral-900">Your Charity Choice</h3>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-[#e5e5e5]">Your Charity Choice</h3>
                         <div class="flex gap-1.5">
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">Bootstrap</span>
-                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 text-neutral-800 px-2 py-1 rounded">HTML/CSS</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">Bootstrap</span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded">HTML/CSS</span>
                         </div>
                     </div>
-                    <p class="text-xs text-neutral-500 font-medium mb-4">Built at HackUMBC (Baltimore, MD)</p>
-                    <p class="text-sm text-neutral-600 leading-relaxed mb-6">
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 font-medium mb-4">Built at HackUMBC (Baltimore, MD)</p>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                         Designed to streamline philanthropic contributions by directly matching donors with vetted, highly reputable charitable organizations based on their location and issue preferences.
                     </p>
                 </div>
                 <div>
-                    <a href="https://github.com/BreckenK/donatewebsite" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 hover:text-neutral-600 group transition">
+                    <a href="https://github.com/BreckenK/donatewebsite" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 dark:text-[#e5e5e5] hover:text-neutral-600 dark:hover:text-neutral-300 group transition">
                         Source Code
                         <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
@@ -154,14 +190,13 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full border-t border-neutral-100 bg-white py-8 mt-12">
-        <div class="max-w-3xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
+    <footer class="w-full border-t border-neutral-100 dark:border-neutral-800 bg-white dark:bg-[#121212] py-8 mt-12 transition-colors duration-300">
+        <div class="max-w-3xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 dark:text-neutral-400">
             <p>&copy; 2026 Shreyas Vaidya. All rights reserved.</p>
             <div class="flex gap-4">
-                <a href="https://github.com/shreyasvai" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition">GitHub</a>
-                <a href="https://linkedin.com/in/shreyasvaidya" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition">LinkedIn</a>
-                <a href="mailto:shreyasvai7@gmail.com" class="hover:text-neutral-900 transition">Email</a>
+                <a href="https://github.com/shreyasvai" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 dark:hover:text-[#e5e5e5] transition">GitHub</a>
+                <a href="https://linkedin.com/in/shreyasvaidya" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 dark:hover:text-[#e5e5e5] transition">LinkedIn</a>
+                <a href="mailto:shreyasvai7@gmail.com" class="hover:text-neutral-900 dark:hover:text-[#e5e5e5] transition">Email</a>
             </div>
         </div>
     </footer>
@@ -169,4 +204,3 @@
     <script src="scripts.js"></script>
 </body>
 </html>
-]]>
